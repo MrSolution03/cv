@@ -285,6 +285,12 @@ export default function App() {
                   </div>
                 </section>
               </div>
+
+              <div className="mt-8 pt-4 text-right">
+                <p className="text-sm font-medium text-stone-800 italic">
+                  Fait à Kolwezi, le {new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
