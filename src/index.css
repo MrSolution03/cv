@@ -28,12 +28,23 @@
   }
   body {
     background-color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  @page {
+    size: A4;
+    margin: 10mm;
   }
   .cv-container {
     box-shadow: none !important;
+    border: none !important;
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
     max-width: none !important;
+  }
+  /* Force single page if possible */
+  .cv-container section {
+    page-break-inside: avoid;
   }
 }

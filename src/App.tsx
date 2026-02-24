@@ -207,10 +207,10 @@ export default function App() {
             layout
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="cv-container mx-auto w-full max-w-[210mm] border border-stone-200 bg-white p-12 shadow-xl"
+            className="cv-container mx-auto w-full max-w-[210mm] border border-stone-200 bg-white p-8 sm:p-12 shadow-xl print:p-0"
           >
-            <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-              <div className="space-y-2">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+              <div className="space-y-1">
                 <h2 className="text-3xl font-bold tracking-tight text-stone-900">{data.personalInfo.fullName}</h2>
                 <p className="text-xl font-medium text-stone-600">{data.personalInfo.title}</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-500">
@@ -220,30 +220,30 @@ export default function App() {
                 </div>
               </div>
               {data.personalInfo.avatar && (
-                <div className="h-24 w-24 shrink-0 overflow-hidden rounded-lg border border-stone-200">
+                <div className="h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-stone-200">
                   <img src={data.personalInfo.avatar} alt={data.personalInfo.fullName} className="h-full w-full object-cover" />
                 </div>
               )}
             </div>
 
-            <hr className="my-8 border-stone-200" />
+            <hr className="my-6 border-stone-200" />
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <section>
-                <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-stone-900">Profil</h3>
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-widest text-stone-900">Profil</h3>
                 <p className="text-sm leading-relaxed text-stone-700">{data.personalInfo.summary}</p>
               </section>
 
               <section>
-                <h3 className="mb-4 text-sm font-bold uppercase tracking-widest text-stone-900">Expérience</h3>
-                <div className="space-y-6">
+                <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-stone-900">Expérience</h3>
+                <div className="space-y-4">
                   {data.experience.map((exp, idx) => (
-                    <div key={idx} className="space-y-1">
+                    <div key={idx} className="space-y-0.5">
                       <div className="flex items-center justify-between">
                         <h4 className="font-bold text-stone-900">{exp.role} — {exp.company}</h4>
                         <span className="text-xs font-medium text-stone-500">{exp.period}</span>
                       </div>
-                      <ul className="list-inside list-disc space-y-1 text-sm text-stone-600">
+                      <ul className="list-inside list-disc space-y-0.5 text-sm text-stone-600">
                         {exp.description.map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
@@ -253,10 +253,10 @@ export default function App() {
                 </div>
               </section>
 
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <section>
-                  <h3 className="mb-4 text-sm font-bold uppercase tracking-widest text-stone-900">Formation</h3>
-                  <div className="space-y-4">
+                  <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-stone-900">Formation</h3>
+                  <div className="space-y-3">
                     {data.education.map((edu, idx) => (
                       <div key={idx} className="text-sm">
                         <p className="font-bold text-stone-900">{edu.degree}</p>
@@ -268,8 +268,8 @@ export default function App() {
                 </section>
 
                 <section>
-                  <h3 className="mb-4 text-sm font-bold uppercase tracking-widest text-stone-900">Compétences & Langues</h3>
-                  <div className="space-y-4">
+                  <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-stone-900">Compétences & Langues</h3>
+                  <div className="space-y-3">
                     {data.skills.map((skillGroup, idx) => (
                       <div key={idx} className="text-sm">
                         <p className="font-bold text-stone-900">{skillGroup.category}</p>
